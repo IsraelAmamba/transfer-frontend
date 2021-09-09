@@ -1,0 +1,37 @@
+<div class="main">
+    
+    <ng-stepper #cdkStepper [linear]="true">
+      <cdk-step [stepControl]="stepOne.stepOneForm" [optional]="false">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">1</div>
+          <div class="step-title">Select Originating Account</div>
+        </ng-template>
+        <app-step-one #stepOne></app-step-one>
+      </cdk-step> 
+    
+      <cdk-step [stepControl]="stepTwo.stepTwoForm" [optional]="true">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">2</div>
+          <div class="step-title">Select Recipient Account</div>
+        </ng-template>
+        <app-step-two #stepTwo></app-step-two>
+      </cdk-step>
+  
+      <cdk-step [stepControl]="stepThree.stepThreeForm" [optional]="false">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">3</div>
+          <div class="step-title">Confirmation of Transaction</div>
+        </ng-template>
+        <app-step-three #stepThree></app-step-three>
+      </cdk-step>
+  
+      <cdk-step [stepControl]="stepFour.stepFourForm" [optional]="true" [state]="stepFour.state">
+        <ng-template cdkStepLabel>
+          <div class="step-bullet">4</div>
+          <div class="step-title">Acknowledgement</div>
+        </ng-template>
+        <app-step-four #stepFour></app-step-four>
+      </cdk-step> 
+    </ng-stepper>
+  </div>
+  
