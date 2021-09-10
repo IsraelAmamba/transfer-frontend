@@ -11,8 +11,8 @@ export class StepOneComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.stepOneForm = this.fb.group({
-      firstName: this.fb.control('', Validators.required),
-      lastName: this.fb.control('', Validators.required)
+      debitAccount: this.fb.control('', Validators.required),
+      debitAmount: this.fb.control('', Validators.required)
     });
   }
 

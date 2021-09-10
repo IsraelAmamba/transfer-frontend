@@ -1,27 +1,51 @@
-<div class="container">
+    <div class="box-header with-border">
+      <h3 class="box-title">Originating Account</h3>
+    </div>
+
     <form #formRef="ngForm" [formGroup]="stepOneForm"
-          (ngSubmit)="stepOneSubmit()"
-          autocomplete="off"
-          novalidate>
-  
-      <div class="input">
-        <label for="fname">First name <span>*</span></label>
-        <input type="text" id="fname" placeholder="Enter First Name" formControlName="firstName"/>
-        <span class="error" *ngIf="stepOneForm.controls['firstName'].hasError('required') && formRef.submitted">First Name is a required field
+    (ngSubmit)="stepOneSubmit()"
+    autocomplete="off"
+    novalidate>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="row">
+        <div class="col-md-12">         
+          <div input class="form-group">
+            <label>Select account to debit</label>
+           
+          </div>
+      <div class="input form-group">
+        <label for="debitAcc">Amount <span>*</span></label>
+        <select class="form-control" id="debitAcc" class="form-control"  formControlName="debitAccount" style="width: 100%;">
+          <option selected="selected">Select account</option>
+          <option>Alaska</option>
+          <option>California</option>
+          <option>Delaware</option>
+          <option>Tennessee</option>
+          <option>Texas</option>
+          <option>Washington</option>
+        </select>
+        <span class="error" *ngIf="stepOneForm.controls['debitAccount'].hasError('required') && formRef.submitted">Debit account a required field
         </span>
       </div>
   
-      <div class="input">
-        <label for="lname">Last name <span>*</span></label>
-        <input type="text" id="lname" placeholder="Enter Last Name" formControlName="lastName"/>
-        <span class="error" *ngIf="stepOneForm.controls['lastName'].hasError('required') && formRef.submitted">Last Name is a required field
+      <div class="input form-group">
+        <label for="amount">Amount <span>*</span></label>
+        <input type="text" id="amount" class="form-control" placeholder="Enter Last Name" formControlName="debitAmount"/>
+        <span class="error" *ngIf="stepOneForm.controls['debitAmount'].hasError('required') && formRef.submitted">Amount is a required field
         </span>
       </div>
   
       <div class="button">
         <button class="button" cdkStepperNext>Next</button>
+      </div>  
+        </div>
+        <!-- /.col -->   
+   
       </div>
+
+      <!-- /.row -->
+    </div>
+  </form>    
   
-    </form>
-  </div>
   

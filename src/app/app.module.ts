@@ -16,6 +16,8 @@ import { StepFourComponent } from './steps/step-four/step-four.component';
 import { LeftnavComponent } from './layout/leftnav/leftnav.component';
 import { TopnavComponent } from './layout/topnav/topnav.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { SavingsComponent } from './accounts/savings/savings.component';
+import { CurrentComponent } from './accounts/current/current.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FooterComponent } from './layout/footer/footer.component';
     StepFourComponent,
     LeftnavComponent,
     TopnavComponent,
-    FooterComponent
+    FooterComponent,
+    SavingsComponent,
+    CurrentComponent
   ],
   imports: [
     BrowserModule,
