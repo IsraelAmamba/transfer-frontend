@@ -1,21 +1,13 @@
-    <div class="box-header with-border">
-      <h3 class="box-title">Originating Account</h3>
-    </div>
+<div class="stepper-container">
 
-    <form #formRef="ngForm" [formGroup]="stepOneForm"
+ <form #formRef="ngForm" [formGroup]="stepOneForm"
     (ngSubmit)="stepOneSubmit()"
     autocomplete="off"
     novalidate>
-    <!-- /.box-header -->
-    <div class="box-body">
-      <div class="row">
-        <div class="col-md-12">         
-          <div input class="form-group">
-            <label>Select account to debit</label>
-           
-          </div>
+      
+        
       <div class="input form-group">
-        <label for="debitAcc">Amount <span>*</span></label>
+        <label for="debitAcc">Debit Account <span>*</span></label>
         <select class="form-control" id="debitAcc" class="form-control"  formControlName="debitAccount" style="width: 100%;">
           <option selected="selected">Select account</option>
           <option>Alaska</option>
@@ -36,16 +28,10 @@
         </span>
       </div>
   
-      <div class="button">
-        <button class="button" cdkStepperNext>Next</button>
+      <div class="buttons">
+        <button class="btn btn-primary" cdkStepperNext>Next</button>
       </div>  
-        </div>
-        <!-- /.col -->   
-   
-      </div>
-
-      <!-- /.row -->
-    </div>
+       
   </form>    
   
-  
+  </div>

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="stepper-container">
     <form [formGroup]="stepThreeForm"
           (ngSubmit)="stepThreeSubmit()"
           autocomplete="off"
@@ -13,11 +13,11 @@
       </div>
   
       <div class="buttons">
-        <div class="button">
-          <button class="button previous" cdkStepperPrevious>Previous</button>
+        <div class="left-btn">
+          <button class="btn btn-success previous" cdkStepperPrevious>Previous</button>
         </div>
-        <div class="button">
-          <button class="button" cdkStepperNext>Next</button>
+        <div class="">
+          <button class="btn btn-primary" cdkStepperNext>Next</button>
         </div>
       </div>
   

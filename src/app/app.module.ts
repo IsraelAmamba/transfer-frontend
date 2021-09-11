@@ -18,6 +18,7 @@ import { TopnavComponent } from './layout/topnav/topnav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SavingsComponent } from './accounts/savings/savings.component';
 import { CurrentComponent } from './accounts/current/current.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CurrentComponent } from './accounts/current/current.component';
     TopnavComponent,
     FooterComponent,
     SavingsComponent,
-    CurrentComponent
+    CurrentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

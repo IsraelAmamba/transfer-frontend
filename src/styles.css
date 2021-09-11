@@ -1,1 +1,50 @@
-/* You can add global styles to this file, and also import other style files */
+.stepper-container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 80vh;
+  margin: 0 auto;
+}
+.stepper-container .input {
+  margin: 8px 0;
+}
+.stepper-container input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin-top: 8px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.stepper-container label span {
+  color: #f82929;
+}
+.stepper-container .error {
+  color: #f82929;
+  font-size: 13px;
+  margin-top: 2px;
+}
+.stepper-container .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.stepper-container .left-btn {
+  margin-right: 20px;
+}
+.stepper-container .button button {
+  background-color: #306bff;
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+}
+.stepper-container .button button:hover {
+  background-color: #0048fc;
+}
+.stepper-container .button.previous {
+  background-color: #4d525f;
+}
+.stepper-container .button.previous:hover {
+  background-color: #363a43;
+}
