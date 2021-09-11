@@ -18,7 +18,15 @@ import { TopnavComponent } from './layout/topnav/topnav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SavingsComponent } from './accounts/savings/savings.component';
 import { CurrentComponent } from './accounts/current/current.component';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './access/login/login.component';
+import { SiteLayoutComponent } from './layout/site-layout/site-layout.component';
+import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
+import { AuthService } from './core/services/application/auth.service';
+import { AuthGuardService } from './core/services/guards/auth-guard.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { LocalStorageService } from './core/services/helpers/local-storage.service';
+import { JsonWebTokenInterceptorProvider } from './core/services/helpers/json-web-token-interceptor.service';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,9 @@ import { LoginComponent } from './auth/login/login.component';
     FooterComponent,
     SavingsComponent,
     CurrentComponent,
-    LoginComponent
+    LoginComponent,
+    SiteLayoutComponent,
+    AppLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +52,16 @@ import { LoginComponent } from './auth/login/login.component';
     ReactiveFormsModule,
     CdkStepperModule,
     NgStepperModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+         
   ],
-  providers: [],
+
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    AuthService, AuthGuardService, 
+    LocalStorageService, JsonWebTokenInterceptorProvider,
+    JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
