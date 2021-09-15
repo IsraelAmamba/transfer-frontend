@@ -8,7 +8,7 @@ export class JsonWebTokenInterceptorService implements HttpInterceptor {
   constructor(private localStorage: LocalStorageService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let currentUser = JSON.parse(this.localStorage.getItem('userSession'));
+    let currentUser = JSON.parse(this.localStorage.getItem('userSession'));    
     if (currentUser && currentUser.token) {
       request = request.clone({
         setHeaders: {

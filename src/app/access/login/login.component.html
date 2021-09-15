@@ -1,6 +1,9 @@
 <section class="login-box">
+  <div class="login-logo">
+    <a href="/assets/adminlte/dist/img/index2.html"><b>MyTransfer</b>App</a>
+  </div>
 	<div class="login-box-body">
-		<p class="login-box-msg"> username: test :: pws: test</p>
+		<p class="login-box-msg"> email: test@yahoo.com; pwd: test$1234</p>
  
 		<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 			<div class="form-group has-feedback">
@@ -40,6 +43,9 @@
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12"><span>{{errorMessage}}</span></div>
       </div>
     </form> 
   </div> 

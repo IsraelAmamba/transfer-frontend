@@ -27,6 +27,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { LocalStorageService } from './core/services/helpers/local-storage.service';
 import { JsonWebTokenInterceptorProvider } from './core/services/helpers/json-web-token-interceptor.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AccountService } from './core/services/application/account.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     CurrentComponent,
     LoginComponent,
     SiteLayoutComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -53,15 +56,12 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     CdkStepperModule,
     NgStepperModule,
     BrowserAnimationsModule,
-    HttpClientModule,
-         
+    HttpClientModule         
   ],
 
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    AuthService, AuthGuardService, 
-    LocalStorageService, JsonWebTokenInterceptorProvider,
-    JwtHelperService],
-  bootstrap: [AppComponent]
+      AuthService, AuthGuardService, LocalStorageService, AccountService, JsonWebTokenInterceptorProvider, JwtHelperService],
+      bootstrap: [AppComponent]
 })
 export class AppModule { }

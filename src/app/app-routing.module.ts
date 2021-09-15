@@ -6,17 +6,21 @@ import { SavingsComponent } from './accounts/savings/savings.component';
 import { AuthGuardService } from './core/services/guards/auth-guard.service';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { SiteLayoutComponent } from './layout/site-layout/site-layout.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LocalToLocalComponent } from './transfer/own-account/local-to-local/local-to-local.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/dashboard',  pathMatch: 'full' },  
   {path: '', component: SiteLayoutComponent, 
     children:
     [
       {path: 'login', component: LoginComponent},
     ]},
+
   {path: '', component: AppLayoutComponent,  canActivate: [AuthGuardService],
     children: 
     [
+        {path: 'dashboard', component: DashboardComponent},
         {path: 'transfers/ownaccount', 
             children:
               [
@@ -31,7 +35,7 @@ const routes: Routes = [
             ]}
      ]
   },  
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '*', component: DashboardComponent },
 ];
 
 @NgModule({

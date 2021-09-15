@@ -13,6 +13,7 @@ import { AuthService } from "../../core/services/application/auth.service";
 export class LoginComponent implements OnInit {
   submitted: boolean = false;
   loginForm: FormGroup;
+  errorMessage = "";
 
   get f() {
     return this.loginForm.controls;
@@ -33,10 +34,10 @@ export class LoginComponent implements OnInit {
   bindLoginFormGroup() {
     this.loginForm = this.formBuilder.group({
       email: [
-        "test@email.com",
+        "test@yahoo.com",
         [Validators.required, Validators.email]
       ],
-      password: ["test@1234", [Validators.required, Validators.minLength(6)]]
+      password: ["test$1234", [Validators.required, Validators.minLength(6)]]
     });
   }
 
@@ -47,11 +48,13 @@ export class LoginComponent implements OnInit {
     }
     this.authService
       .login(this.f.email.value, this.f.password.value)
-      .pipe(first())
       .subscribe(
         data => {
-          console.log(data);          
-          this.router.navigate(["/"]); //home page
+          if(data.responseCode=="00")
+            this.router.navigate(["/"]);
+           else 
+             this.errorMessage = data.responseMsg
+
         },
         error => {
            console.log(error);
